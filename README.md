@@ -29,7 +29,9 @@ This command will generate 10 random mutations from your `bed` file (with covera
 
 Then these mutations will be added to your `BAM` files using bamsurgeon.
 If one of the mutation you want to add did not succeed, a file `*failed.var` will be present on your `$outputFolder/mut_bam` directory containing this mutation.  
-You can use your own variant files, by providing `--varFolder` option.
+You can use your own variant files, by providing `--varFolder` option.  
+
+The tool can also deal with indels, by provinding `--del` or `--ins` option in addition to `--indel_size mysize` one.
 
 #### Help section
 You can print the help manual by providing `--help` in the execution command line:
