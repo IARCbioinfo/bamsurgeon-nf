@@ -134,6 +134,7 @@ for (mut_id in 1:args$n_mut){
   if (args$ins) alternative = sample(c("A","T","C","G"), args$indel_size)
   if (args$del) {
     alternative = ""
+    if(is.na(bed_info$positions[position + args$indel_size])) position = position - args$indel_size
     positionS = position
     positionE = position + args$indel_size
   }
