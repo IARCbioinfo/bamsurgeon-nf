@@ -25,7 +25,7 @@ Nextflow seamlessly integrates with GitHub hosted code repositories:
 nextflow run iarcbioinfo/bamsurgeon-nf  --bam_folder BAM/ --genomeRef hg19.fasta --picardpath picard.jar --bed positions.bed --n_mutations 10 --hotspot_size 2
 ```
 
-This command will generate 10 random mutations from your `bed` file (with coverage control) on 2 samples present in your `BAM` folder, with allelic fraction following a logarithmic random distribution.
+This command will generate 10 random mutations from your `bed` file (with coverage control, i.e. a mutation is introduced only if the number of mutated reads would be higher than the threshold at 5) on 2 technical replicates of a sample present in your `BAM` folder, with allelic fraction following a logarithmic random distribution (see this script: [generate_varfiles.r](https://github.com/IARCbioinfo/bamsurgeon-nf/blob/master/bin/generate_varfiles.r), caution: this process used for the moment 10 CPUs).
 
 Then these mutations will be added to your `BAM` files using bamsurgeon.
 If one of the mutation you want to add did not succeed, a file `*failed.var` will be present on your `$outputFolder/mut_bam` directory containing this mutation.  
