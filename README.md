@@ -1,5 +1,11 @@
 ## bamsurgeon-nf  
-### bamsurgeon with step of variant simulation  
+### in-silico simulations of mutations using bamsurgeon 
+
+#### Summary
+This nextflow script executes two major steps:
+	* variant simulation using the script [generate_varfiles.r](https://github.com/IARCbioinfo/bamsurgeon-nf/blob/master/bin/generate_varfiles.r), variant allelic fractions are randomly distributed (in log scale)
+	* in-silico intoduction of these variants in BAM files
+	* caution: for the moment, this requires two technical replicates of the same sample (used to boost the precision of the variant calling)
 
 #### Dependencies
 
